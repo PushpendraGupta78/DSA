@@ -1,0 +1,32 @@
+class Solution {
+    public boolean canAliceWin(int[] nums) {
+        int sum = 0;
+        int bigsum = 0;
+        for(int i : nums) {
+            if(i < 10){
+                sum += i;
+            }else {
+                bigsum += i;
+            }
+        }
+
+        if(sum == bigsum){
+                return false;
+        } else {
+            return true; //this line.
+        }
+
+
+        //OR
+
+        /* int alice = Math.max(sum ,bigsum);
+        int bob = Math.min(sum, bigsum);
+
+        if(alice > bob){
+            return true;
+        } else { 
+            return false;
+        } */
+
+    }
+}
