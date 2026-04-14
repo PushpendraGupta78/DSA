@@ -1,0 +1,36 @@
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        char[] arr1 = s.toCharArray();
+        Arrays.sort(arr1);
+
+        StringBuilder sb = new StringBuilder();
+        for(char c : arr1) {
+            sb.append(c);
+        }
+        sb.toString();
+
+        char[] arr2 = t.toCharArray();
+        Arrays.sort(arr2);
+
+        StringBuilder sb2 = new StringBuilder();
+        for(char c : arr2) {
+            sb2.append(c);
+        }
+        sb2.toString();
+
+        int i=0;
+        int j=0;
+        while(i< sb.length() && j< sb2.length()){
+            if(sb.charAt(i) == sb2.charAt(j)){
+                j++;
+                
+            }
+            i++;
+        }
+        if(i ==  sb.length() && j == sb2.length() ){
+            return true;
+        }
+
+        return false;
+    }
+}
